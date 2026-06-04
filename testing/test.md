@@ -1,0 +1,10 @@
+this is a teest
+does the speel checker work?
+
+Teesttt
+
+testt
+.
+
+
+

@@ -48,7 +48,7 @@ end)
 vim.keymap.set("n", "<leader>bn", "<cmd>bn<CR>") -- buffer next
 vim.keymap.set("n", "<leader>bp", "<cmd>bp<CR>") -- buffer previous
 vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>") -- buffer close
-vim.keymap.set("n", "<leader>bD", "<cmd>bd!<CR>") -- buffer close without saving
+vim.keymap.set("n", "<leader>b<S-d>", "<cmd>bd!<CR>") -- buffer close without saving
 
 
 -- SVED keybinds

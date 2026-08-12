@@ -3,6 +3,18 @@ local get_visual = helpers.get_visual
 local tex = helpers.tex_utils
 
 return {
+    s({trig=";sm", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\sum_{}^{}", priority=2000},
+        fmta(
+            "<>\\sum_{<>}^{<>}<>",
+            {
+                f( function(_, snip) return snip.captures[1] end ),
+                i(1),
+                i(2),
+                d(3, get_visual)
+            }
+        ),
+        { condition = tex.in_mathzone }
+    ),
     s({trig=";fr", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\frac{}{}", priority=2000},
         fmta(
             "<>\\frac{<>}{<>}",

@@ -3,6 +3,17 @@ local get_visual = helpers.get_visual
 local tex = helpers.tex_utils
 
 return {
+    s({trig=";bin", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\binom{}{}", priority=2000},
+        fmta(
+            "<>\\binom{<>}{<>}",
+            {
+                f( function(_, snip) return snip.captures[1] end ),
+                i(1),
+                i(2)
+            }
+        ),
+        { condition = tex.in_mathzone }
+    ),
     s({trig=";sm", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\sum_{}^{}", priority=2000},
         fmta(
             "<>\\sum_{<>}^{<>}<>",
@@ -89,5 +100,45 @@ return {
     s({trig=";zo", regTrig=true, wordTrig=false, snippetType="autosnippet", priority=2000},
         t("\\{0,1\\}"),
         {condition = tex.in_mathzone}
+    ),
+    s({trig=";cl", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\lceil{}\\rceil", priority=2000},
+        fmta(
+            "<>\\lceil{<>}\\rceil",
+            {
+                f( function(_, snip) return snip.captures[1] end ),
+                d(1, get_visual)
+            }
+        ),
+        { condition = tex.in_mathzone }
+    ),
+    s({trig=";fl", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\lfloor{}\\rfloor", priority=2000},
+        fmta(
+            "<>\\lfloor{<>}\\rfloor",
+            {
+                f( function(_, snip) return snip.captures[1] end ),
+                d(1, get_visual)
+            }
+        ),
+        { condition = tex.in_mathzone }
+    ),
+    s({trig=";Cl", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\left\\lceil{}\\right\\rceil", priority=2000},
+        fmta(
+            "<>\\left\\lceil{<>}\\right\\rceil",
+            {
+                f( function(_, snip) return snip.captures[1] end ),
+                d(1, get_visual)
+            }
+        ),
+        { condition = tex.in_mathzone }
+    ),
+    s({trig=";Fl", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\left\\lfloor{}\\right\\rfloor", priority=2000},
+        fmta(
+            "<>\\left\\lceil{<>}\\right\\rceil",
+            {
+                f( function(_, snip) return snip.captures[1] end ),
+                d(1, get_visual)
+            }
+        ),
+        { condition = tex.in_mathzone }
     ),
 }

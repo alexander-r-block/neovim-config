@@ -159,6 +159,10 @@ return {
         fmta("\\mathcal{<>}", { d(1, get_visual) }),
         { condition = tex.in_mathzone }
     ),
+    s({trig="msc", snippetType="autosnippet", dscr="\\mathscr{}"},
+        fmta("\\mathscr{<>}", { d(1, get_visual) }),
+        { condition = tex.in_mathzone }
+    ),
     --[[
     -- font sizes 
     --]]

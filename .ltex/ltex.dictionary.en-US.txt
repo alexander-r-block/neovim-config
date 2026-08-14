@@ -26,3 +26,5 @@ mutlilinear
 PIOP
 EUROCRYPT
 Fiat-Shamir
+iff
+Corequisite

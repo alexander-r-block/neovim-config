@@ -4,6 +4,11 @@ local tex = helpers.tex_utils
 
 
 return {
+    -- TeX root magic comment
+    s({trig=";root", snippetType="autosnippet"},
+        fmta("% !TeX root = <>", { d(1, get_visual) }),
+        { condition = tex.in_text * helpers.line_begin }
+    ),
     -- non-math parentesis
     s({trig="([%A])%(", regTrig=true, wordTrig=false, snippetType="autosnippet"},
         fmta("<>(<>)",

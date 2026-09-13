@@ -28,3 +28,4 @@ EUROCRYPT
 Fiat-Shamir
 iff
 Corequisite
+Chernoff

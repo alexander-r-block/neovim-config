@@ -35,31 +35,28 @@ return {
                 }
             },
             keymap = {
-                ['<Tab>'] = false,
-                ['<S-Tab>'] = false,
                 ['<C-j>'] = { 'snippet_forward', 'fallback' },
                 ['<C-k>'] = { 'snippet_backward', 'fallback' },
-                ['<C-Tab>'] = {},
-                --    {
-                --    function(cmp)
-                --        local luasnip = require('luasnip')
-                --        if luasnip.choice_active() then
-                --            luasnip.change_choice(1)
-                --        else
-                --            cmp.fallback()
-                --        end
-                --    end
-                --},
-                ['<C-S-Tab>'] = {}
-                --    function(cmp)
-                --        local luasnip = require('luasnip')
-                --        if luasnip.choice_active() then
-                --            luasnip.change_choice(1)
-                --        else
-                --            cmp.fallback()
-                --        end
-                --    end
-                --}
+                ['<C-m>'] = {
+                    function(cmp)
+                        local luasnip = require('luasnip')
+                        if luasnip.choice_active() then
+                            luasnip.change_choice(1)
+                        else
+                            cmp.fallback()
+                        end
+                    end
+                },
+                ['<C-S-m>'] = {
+                    function(cmp)
+                        local luasnip = require('luasnip')
+                        if luasnip.choice_active() then
+                            luasnip.change_choice(1)
+                        else
+                            cmp.fallback()
+                        end
+                    end
+                }
             }
         },
     }

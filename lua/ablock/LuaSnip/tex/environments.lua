@@ -151,7 +151,7 @@ return {
                     \item<><>
                 \end{enumerate}
             ]],
-            { i(1), d(2, rec_ls, {}) }
+            { i(1, "text"), d(2, rec_ls, {}) }
         ),
         { condition = helpers.line_begin }
     ),

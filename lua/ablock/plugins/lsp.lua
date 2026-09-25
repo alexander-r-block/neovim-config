@@ -107,14 +107,14 @@ return {
                      fallback()
                  end
               end, {"i", "s"}),
-              ['<C-Tab>'] = cmp.mapping(function (fallback)
+              ['<C-m>'] = cmp.mapping(function (fallback)
                 if luasnip.choice_active() then
                   luasnip.change_choice(1)
                 else
                   fallback()
                 end
               end, {"i", "s"}),
-              ['<C-S-Tab>'] = cmp.mapping(function (fallback)
+              ['<C-S-m>'] = cmp.mapping(function (fallback)
                 if luasnip.choice_active() then
                   luasnip.change_choice(-1)
                 else

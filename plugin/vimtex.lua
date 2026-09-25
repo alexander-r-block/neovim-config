@@ -1,7 +1,7 @@
 
 -- pdf viewer
--- !!! TODO: Add different view methods for windows, macos
---     This is achieved via vim.fn.has('win32') and vim.fn.has('macunix')
+-- Different view methods for linux, macos, and windows (lol)
+-- This is achieved via vim.fn.has('win32') and vim.fn.has('macunix')
 if(vim.fn.has('mac') > 0) then
     vim.g.vimtex_view_method = 'skim'
     --vim.g.vimtex_view_sioyek_exe = 'sioyek'

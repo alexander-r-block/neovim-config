@@ -32,5 +32,20 @@ return {
         vim.lsp.config("lua_ls", {capabilities = capabilities})
         vim.lsp.config("texlab", { settings = { texlab = { rootDirectory = "." } } })
         vim.lsp.config("ltex_plus", { settings = { ltex = { language = "en-US", checkFrequency = "save" }} })
+        local luasnip = require("luasnip")
+        vim.keymap.set({"i","s"}, "<C-Tab>", function(fallback)
+            if luasnip.choice_active() then
+                luasnip.change_choice(1)
+            else
+                fallback()
+            end
+        end)
+        vim.keymap.set({"i","s"}, "<C-S-Tab>", function(fallback)
+            if luasnip.choice_active() then
+                luasnip.change_choice(-1)
+            else
+                fallback()
+            end
+        end)
     end
 }

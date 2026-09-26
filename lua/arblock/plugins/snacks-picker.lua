@@ -3,6 +3,29 @@ return {
     ---@type snacks.Config
     opts = {
         picker = {
+            sources = {
+                harpoon = {
+                finder = function(opts, ctx)
+                  local harpoon = require("harpoon"):list()
+                  local files = {}
+                  local cwd = vim.loop.cwd()
+                  for idx, item in ipairs(harpoon.items) do
+                    table.insert(files,
+                      {
+                        cwd = cwd,
+                        text = item.value,
+                        file = item.value,
+                        idx = idx
+                      }
+                    )
+                  end
+                  return files
+                end,
+                format = "text",
+                preview = "file",
+                confirm = "jump",
+      }
+            },
         },
     },
     keys = {
@@ -15,5 +38,6 @@ return {
         { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
         { "<leader>man", function() Snacks.picker.man() end, desc = "Search Man", mode = { "n" } },
         { "<leader>qf", function() Snacks.picker.qflist() end, desc = "Quickfix List", mode = { "n" } },
+        { "<C-e>", function() Snacks.picker.harpoon() end, desc = "Harpoon Picker" },
     },
 }

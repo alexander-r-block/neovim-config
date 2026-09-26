@@ -13,6 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = { import= "ablock.plugins" },
+    spec = { import= "arblock.plugins" },
     change_detection = { notify = false },
 })

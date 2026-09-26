@@ -28,10 +28,10 @@ return {
                         module = 'blink.compat.source',
                         --score_offset = -3,
                         opts = {}
-                    }
+                    },
                 },
                 per_filetype = {
-                    tex = { 'vimtex' }
+                    tex = { 'vimtex', 'lsp' }
                 }
             },
             keymap = {
@@ -42,20 +42,22 @@ return {
                         local luasnip = require('luasnip')
                         if luasnip.choice_active() then
                             luasnip.change_choice(1)
-                        else
-                            cmp.fallback()
+                            return true
                         end
-                    end
+                        return false
+                    end,
+                    'fallback'
                 },
                 ['<C-S-m>'] = {
                     function(cmp)
                         local luasnip = require('luasnip')
                         if luasnip.choice_active() then
                             luasnip.change_choice(1)
-                        else
-                            cmp.fallback()
+                            return true
                         end
-                    end
+                        return false
+                    end,
+                    'fallback'
                 }
             }
         },

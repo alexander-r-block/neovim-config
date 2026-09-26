@@ -4,9 +4,8 @@
 	third param is command
 ]]
 --
---vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
---vim.keymap.set("n","<leader>pv", ":Oil --float<CR>")
---vim.keymap.set("n","<leader>po", ":Oil<CR>")
+vim.keymap.set("n", "<leader>pv", ":Oil --float<CR>")
+vim.keymap.set("n", "<leader>po", ":Oil<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -44,9 +43,9 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 --end)
 
 -- Buffer manipulation
-vim.keymap.set("n", "<leader>bn", "<cmd>bn<CR>") -- buffer next
-vim.keymap.set("n", "<leader>bp", "<cmd>bp<CR>") -- buffer previous
-vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>") -- buffer close
+vim.keymap.set("n", "<leader>bn", "<cmd>bn<CR>")      -- buffer next
+vim.keymap.set("n", "<leader>bp", "<cmd>bp<CR>")      -- buffer previous
+vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>")      -- buffer close
 vim.keymap.set("n", "<leader>b<S-d>", "<cmd>bd!<CR>") -- buffer close without saving
 
 

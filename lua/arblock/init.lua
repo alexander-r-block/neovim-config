@@ -5,12 +5,12 @@ require("arblock.lazy.lazy")
 
 
 local augroup = vim.api.nvim_create_augroup
-local ablockGroup = augroup('ablock', {})
+local arblockGroup = augroup('arblock', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd('LspAttach', {
-    group = ablockGroup,
+    group = arblockGroup,
     callback = function(e)
         local opts = { buffer = e.buf }
         vim.diagnostic.config({jump={float=true}})
@@ -27,3 +27,4 @@ autocmd('LspAttach', {
         vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format({async=true}) end, opts)
     end
 })
+

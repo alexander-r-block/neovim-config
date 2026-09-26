@@ -5,30 +5,28 @@ return {
     opts = {
         settings = {
             save_on_toggle = true,
-        }
+        },
     },
     keys = function()
-        local harpoon = require("harpoon")
-        --harpoon:setup({
-        --    settings = {
-        --        save_on_toggle = false,
-        --        save_on_ui_close = false,
-        --    },
-        --})
-        local keys = {
-            {"<leader>a", function() harpoon:list():add() end, desc = "Harpoon add"},
-            {"<leader>r", function() harpoon:list():remove() end, desc = "Harpoon remove"},
+        local my_keys = {
+            {"<leader>a", function() require('harpoon'):list():add() end, desc = "Harpoon Add", mode = {"n"}},
+            {"<leader>r", function() require('harpoon'):list():remove() end, desc = "Harpoon Remove", mode = {"n"}},
+            {"<C-S-P>", function() require('harpoon'):list():prev() end, desc = "Harpoon Previous", mode = {"n"}},
+            {"<C-S-N>", function() require('harpoon'):list():next() end, desc = "Harpoon Next", mode = {"n"}},
+            {"<C-S-Del>", function() require('harpoon'):list():clear() end, desc = "Harpoon Clear", mode = {"n"}},
         }
 
         for i = 1, 4 do
-            table.insert(keys, {
-                "<C-" .. i .. ">",
-                function()
-                    harpoon:list():select(i)
-                end,
-                desc = "Harpoon to file " .. i,
+            local key = "<C-" .. i .. ">"
+            table.insert(my_keys,{
+                key,
+                function() require('harpoon'):list():select(i) end,
+                desc = "Harpoon to File " .. i,
+                mode = {"n"}
             })
         end
+
+        return my_keys
 
         --vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end) -- add to list
         --vim.keymap.set("n", "<leader>r", function() harpoon:list():remove() end) -- remove from list
@@ -40,6 +38,5 @@ return {
 
         --vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
         --vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
-        return keys
     end,
 }

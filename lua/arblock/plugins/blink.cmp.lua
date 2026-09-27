@@ -22,6 +22,7 @@ return {
         opts = {
             snippets = { preset = 'luasnip' },
             sources = {
+                default = { 'lsp', 'snippets', 'path' },
                 providers = {
                     vimtex = {
                         name = 'vimtex',

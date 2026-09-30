@@ -1,0 +1,3 @@
+[submodule "parser/asciidoc"]
+	path = parser/asciidoc
+	url = git@github.com:cathaysia/tree-sitter-asciidoc.git

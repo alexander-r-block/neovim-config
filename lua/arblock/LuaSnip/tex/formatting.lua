@@ -1,4 +1,4 @@
-local helpers = require('ablock.LuaSnip.lsnip-helpers')
+local helpers = require('arblock.LuaSnip.lsnip-helpers')
 local get_visual = helpers.get_visual
 local tex = helpers.tex_utils
 
@@ -32,7 +32,7 @@ return {
         ),
         { condition = tex.in_text }
     ),
-    s({trig="([^%a])tbb", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\textbf{}", priority=2000},
+    s({trig="([%A])tbb", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\textbf{}", priority=2000},
         fmta(
             "<>\\textbf{<>}",
             {
@@ -51,7 +51,7 @@ return {
         ),
         { condition = helpers.make_condition(tex.in_text) and helpers.line_begin }
     ),
-    s({trig="([^%a])ull", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\underline{}", priority=2000},
+    s({trig="([%A])ull", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\underline{}", priority=2000},
         fmta(
             "<>\\underline{<>}",
             {
@@ -70,7 +70,7 @@ return {
         ),
         { condition = helpers.make_condition(tex.in_text) and helpers.line_begin }
     ),
-    s({trig="([^%a])tii", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\textit{}", priority=2000},
+    s({trig="([%A])tii", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\textit{}", priority=2000},
         fmta(
             "<>\\textit{<>}",
             {
@@ -89,7 +89,7 @@ return {
         ),
         { condition = helpers.make_condition(tex.in_text) and helpers.line_begin }
     ),
-    s({trig="([^%a])scc", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\textsc{}", priority=2000},
+    s({trig="([%A])scc", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\textsc{}", priority=2000},
         fmta(
             "<>\\textsc{<>}",
             {
@@ -108,7 +108,7 @@ return {
         ),
         { condition = helpers.make_condition(tex.in_text) and helpers.line_begin }
     ),
-    s({trig="([^%a])tsf", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\textsf{}", priority=2000},
+    s({trig="([%A])tsf", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\textsf{}", priority=2000},
         fmta(
             "<>\\textsf{<>}",
             {

@@ -22,7 +22,7 @@ return {
         opts = {
             snippets = { preset = 'luasnip' },
             sources = {
-                default = { 'lsp', 'snippets', 'path' },
+                -- default = { 'lsp', 'buffer', 'snippets', 'path' },
                 providers = {
                     vimtex = {
                         name = 'vimtex',
@@ -32,7 +32,7 @@ return {
                     },
                 },
                 per_filetype = {
-                    tex = { 'vimtex', 'lsp' }
+                    tex = { 'vimtex', 'lsp', 'path' }
                 }
             },
             keymap = {

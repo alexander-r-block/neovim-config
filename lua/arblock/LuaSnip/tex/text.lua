@@ -1,4 +1,4 @@
-local helpers = require('ablock.LuaSnip.lsnip-helpers')
+local helpers = require('arblock.LuaSnip.lsnip-helpers')
 local get_visual = helpers.get_visual
 local tex = helpers.tex_utils
 
@@ -28,7 +28,7 @@ return {
         ),
         { condition = tex.in_text }
     ),
-    s({trig="([%A])%{", regTrig=true, wordTrig=false, snippetType="autosnippet"},
+    s({trig="([%A]%})%{", regTrig=true, wordTrig=false, snippetType="autosnippet"},
         fmta("<>{<>}",
             {
                 f( function(_, snip) return snip.captures[1] end ),
@@ -37,8 +37,15 @@ return {
         ),
         { condition = tex.in_text }
     ),
-    s({trig="([\\%a])%{", regTrig=true, wordTrig=false, snippetType="autosnippet"},
+    s({trig="([\\%a%]%}])%{", regTrig=true, wordTrig=false, snippetType="autosnippet"},
         fmta("<>{<>}",
+        {
+            f( function(_, snip) return snip.captures[1] end ),
+            d(1, get_visual)
+        })
+    ),
+    s({trig="([\\%a%]%}])%[", regTrig=true, wordTrig=false, snippetType="autosnippet"},
+        fmta("<>[<>]",
         {
             f( function(_, snip) return snip.captures[1] end ),
             d(1, get_visual)

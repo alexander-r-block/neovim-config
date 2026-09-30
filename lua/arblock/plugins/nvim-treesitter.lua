@@ -3,7 +3,30 @@ return {
     build = ":TSUpdate",
     branch = "main",
     init = function()
-        local ensureInstalled = { "html", "css", "bibtex", "bash", "c", "cpp", "lua", "vim", "vimdoc", "query", "javascript", "json", "json5", "rust", "scss", "markdown", "markdown_inline", "python" }
+        local ensureInstalled = {
+            "html",
+            "css",
+            "bibtex",
+            "bash",
+            "c",
+            "cpp",
+            "lua",
+            "vim",
+            "vimdoc",
+            "query",
+            "javascript",
+            "json",
+            "json5",
+            "rust",
+            "scss",
+            "markdown",
+            "markdown_inline",
+            "python",
+            "comment",
+            "latex",
+            "typst",
+            "yaml",
+        }
         local alreadyInstalled = require('nvim-treesitter.config').get_installed()
         local parsersToInstall = vim.iter(ensureInstalled)
             :filter(function(parser)

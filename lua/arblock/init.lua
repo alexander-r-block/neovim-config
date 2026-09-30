@@ -27,3 +27,15 @@ autocmd('LspAttach', {
         vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end, opts)
     end
 })
+
+autocmd('User', { pattern = 'TSUpdate',
+    callback = function()
+        require('nvim-treesitter.parsers').asciidoc = {
+            install_info = {
+                path = vim.fn.stdpath("config") .. "/parser/asciidoc/tree-sitter-asciidoc/",
+                queries = "queries"
+            },
+        }
+    end
+})
+vim.treesitter.language.register('asciidoc', { 'adoc' })

@@ -1,4 +1,4 @@
-local helpers = require('ablock.LuaSnip.lsnip-helpers')
+local helpers = require('arblock.LuaSnip.lsnip-helpers')
 local tex_utils = helpers.tex_utils
 
 return {

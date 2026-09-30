@@ -7,6 +7,6 @@ return {
             store_selection_keys = "<Tab>",
             update_events = 'TextChanged,TextChangedI'
         })
-        require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/lua/ablock/LuaSnip/"})
+        require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/lua/arblock/LuaSnip/"})
     end
 }

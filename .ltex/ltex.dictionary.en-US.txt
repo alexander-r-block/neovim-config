@@ -30,3 +30,5 @@ iff
 Corequisite
 Chernoff
 recurse
+sumcheck
+Sumcheck

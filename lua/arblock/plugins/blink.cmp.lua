@@ -13,7 +13,6 @@ return {
             'L3MON4D3/LuaSnip'
         },
         build = function()
-            print("hello!")
             require('blink.cmp').build():pwait()
         end,
 

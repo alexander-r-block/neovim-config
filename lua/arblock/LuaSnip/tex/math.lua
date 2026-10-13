@@ -77,6 +77,16 @@ return {
         ),
         { condition = tex.in_mathzone }
     ),
+    s({trig=";bs", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\overline{}", priority=2000},
+        fmta(
+            "<>\\boldsymbol{<>}",
+            {
+                f( function(_, snip) return snip.captures[1] end ),
+                d(1, get_visual)
+            }
+        ),
+        { condition = tex.in_mathzone }
+    ),
     s({trig=";sb", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="Command for subscript", priority=2000},
         fmta(
             "<>_{<>}",

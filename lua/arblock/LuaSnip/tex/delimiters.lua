@@ -13,7 +13,7 @@ return {
         ),
         { condition = tex.in_mathzone }
     ),
-    s({trig="([%A])l%[", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\left[\\right]"},
+    s({trig="([%A])l%[", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\left[\\right]", priority=2000},
         fmta(
             [[ <>\left[ <> \right] ]],
             {

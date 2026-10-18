@@ -6,6 +6,25 @@ return {
     --[[
     --  text font styling
     --]]
+    s({trig="([%A])mtt", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\mathtt{}", priority=2000},
+        fmta(
+            "<>\\mathtt{<>}",
+            {
+                f( function(_, snip) return snip.captures[1] end ),
+                d(1, get_visual)
+            }
+        ),
+        { condition = tex.in_mathzone }
+    ),
+    s({trig="mtt", snippetType="autosnippet", dscr="\\texttt{}"},
+        fmta(
+            "\\mathtt{<>}",
+            {
+                d(1, get_visual)
+            }
+        ),
+        { condition = helpers.make_condition(tex.in_mathzone) and helpers.line_begin }
+    ),
     s({trig="([%A])ttt", regTrig=true, wordTrig=false, snippetType="autosnippet", dscr="\\texttt{}", priority=2000},
         fmta(
             "<>\\texttt{<>}",

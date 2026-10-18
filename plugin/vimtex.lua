@@ -7,9 +7,9 @@ if(vim.fn.has('mac') > 0) then
     --vim.g.vimtex_view_sioyek_exe = 'sioyek'
 else
     vim.g.vimtex_view_method = 'sioyek'
-    if(vim.fn.executable('sioyek.AppImage') > 0) then
-        vim.g.vimtex_view_sioyek_exe = 'sioyek.AppImage'
-    end
+    --if(vim.fn.executable('sioyek.AppImage') > 0) then
+    --    vim.g.vimtex_view_sioyek_exe = 'sioyek.AppImage'
+    --end
 end
 --vim.g.vimtex_general_viewer = 'evince'
 --vim.keymap.set("n", "v", function()
@@ -36,6 +36,30 @@ vim.g.vimtex_doc_handlers = { 'vimtex#doc#handlers#texdoc' }
 vim.g.vimtex_syntax_custom_envs = {
     { name = 'algomathdisplay', math = vim.v['true']}
 }
+
+--function callback(msg)
+--end
+--
+--vim.g.vimtex_compiler_method = 'generic'
+--vim.g.vimtex_compiler_generic = {
+--    command = 'flashtex build',
+--    hooks = {callback}
+--}
+
+--  function! Callback(msg)
+--    " Use a regex match on the compiler output to get automatic VimtexErrors
+--    " functionality. The below conditional must likely be changed to be
+--    " useful, of course!
+--    if a:msg =~# 'error'
+--      call vimtex#compiler#callback(!vimtex#qf#inquire(b:vimtex.tex))
+--    endif
+--  endfunction
+--
+--  let g:vimtex_compiler_method = 'generic'
+--  let g:vimtex_compiler_generic = {
+--      \ 'command' : 'make',
+--      \ 'hooks': [function('Callback')],
+--      \}
 
 -- new keybindings
 vim.keymap.set("n", "H", function()

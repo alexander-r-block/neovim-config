@@ -32,3 +32,4 @@ Chernoff
 recurse
 sumcheck
 Sumcheck
+softmax

@@ -12,3 +12,4 @@
 {"rule":"EN_A_VS_AN","sentence":"^\\QWe leave as future work to perform a RBR soundness/knowledge and FS analysis of other protocols captured in our framework.\\E$"}
 {"rule":"EN_WORD_COHERENCY","sentence":"^\\QAll distance analyses then operate via the Union Bound to analyze the following probability.\\E$"}
 {"rule":"PRP_JJ","sentence":"^\\QCombining the above with \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-|Dummy\\+|Dummy's\\+)[0-9]+\\Q, we upper bound the following equation to prove \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-|Dummy\\+|Dummy's\\+)[0-9]+\\Q.\\E$"}
+{"rule":"COMMA_COMPOUND_SENTENCE_2","sentence":"^\\QThe paper is not self-contained and requires extensive research into prior work or extensive background knowledge in order to understand both the problem the paper is trying to solve and the solution presented by the paper.\\E$"}

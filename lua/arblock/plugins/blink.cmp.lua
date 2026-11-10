@@ -35,6 +35,7 @@ return {
                 }
             },
             keymap = {
+                ['<C-s>'] = { 'show' },
                 ['<C-j>'] = { 'snippet_forward', 'fallback' },
                 ['<C-k>'] = { 'snippet_backward', 'fallback' },
                 ['<C-m>'] = {

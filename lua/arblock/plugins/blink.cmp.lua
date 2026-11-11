@@ -35,7 +35,9 @@ return {
                 }
             },
             keymap = {
+                ['<Tab>'] = false,
                 ['<C-s>'] = { 'show' },
+                ['<C-S-s>'] = { 'show_documentation', 'hide_documentation' },
                 ['<C-j>'] = { 'snippet_forward', 'fallback' },
                 ['<C-k>'] = { 'snippet_backward', 'fallback' },
                 ['<C-m>'] = {

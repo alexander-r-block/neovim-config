@@ -33,3 +33,4 @@ recurse
 sumcheck
 Sumcheck
 softmax
+pseudorandomness
